@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
 import makeData from './makeData'
 
-import { Job_Data } from './awes/job/job.data'
-import JobTable from './awes/job/job-table.component'
+// import { Job_Data } from './awes/job/job.data'
+// import JobTable from './awes/job/job-table.component'
+
+import { Truck_Data } from './awes/truck/truck.data'
+import TruckTable from './awes/truck/truck-table.component'
 //###########################################################################################
 // import SimpleTable from './components/simple-table.component'
 // import {Simple_Data} from './components/simple-table.data'
@@ -60,13 +63,27 @@ const App = () => {
 //###########################################################################################
 
     const columns = React.useMemo(
-        () => Job_Data,
+        () => Truck_Data,
         []
     )
 
-    const data = React.useMemo(() => makeData(10, 3), [])
+    // const data = React.useMemo(() => makeData(10, 3), [])
 
+    const data = React.useMemo(() => makeData(10), [])
 
+    // Create a function that will render our row sub components
+    const renderRowSubComponent = React.useCallback(
+      ({ row }) => (
+        <pre
+          style={{
+            fontSize: '10px',
+          }}
+        >
+          <code>{JSON.stringify({ values: row.values }, null, 2)}</code>
+        </pre>
+      ),
+      []
+    )
         
     return (
         //###########################################################################################
@@ -81,10 +98,19 @@ const App = () => {
         // />
         // console.log(process.env.REACT_APP_ROOD)
         //###########################################################################################
-    <div>
-        good morning
-        <JobTable columns={columns} data={data} />
-    </div>
+    // <div>
+    //     good morning
+    //     <JobTable columns={columns} data={data} />
+    // </div>
+    <TruckTable
+    columns={columns}
+    data={data}
+    // We added this as a prop for our table component
+    // Remember, this is not part of the React Table API,
+    // it's merely a rendering option we created for
+    // ourselves
+    renderRowSubComponent={renderRowSubComponent}
+  />
     )
 }
 
