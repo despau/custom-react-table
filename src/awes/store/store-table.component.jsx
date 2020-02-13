@@ -8,7 +8,7 @@ import { useTable, usePagination } from 'react-table'
 // Let's add a fetchData method to our Table component that will be used to fetch
 // new data when pagination state changes
 // We can also add a loading state to let our table know it's loading new data
-const StoreTable =({
+const StoreTable = ({
   columns,
   data,
   fetchData,
@@ -54,7 +54,7 @@ const StoreTable =({
   return (
     <Styles>
       <pre>
-        <code>
+        {/* <code>
           {JSON.stringify(
             {
               pageIndex,
@@ -66,7 +66,7 @@ const StoreTable =({
             null,
             2
           )}
-        </code>
+        </code> */}
       </pre>
       <table {...getTableProps()}>
         <thead>
@@ -104,7 +104,7 @@ const StoreTable =({
               <td colSpan="10000">Loading...</td>
             ) : (
               <td colSpan="10000">
-                Showing {page.length} of ~{controlledPageCount * pageSize}{' '}
+                Showing {page.length}{' '} of ~ {controlledPageCount * pageSize}{' '}
                 results
               </td>
             )}
