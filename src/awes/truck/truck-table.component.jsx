@@ -3,7 +3,6 @@ import { Styles } from './truck-table.styles'
 
 import { useTable, useExpanded } from 'react-table'
 
-import makeData from './../../makeData'
 
 
 // A simple way to support a renderRowSubComponent is to make a render prop
