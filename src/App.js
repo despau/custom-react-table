@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import makeData from './makeData'
 
+import { Job_Data } from './awes/job/job.data'
+import JobTable from './awes/job/job-table.component'
+//###########################################################################################
 // import SimpleTable from './components/simple-table.component'
 // import {Simple_Data} from './components/simple-table.data'
 
@@ -9,10 +12,10 @@ import makeData from './makeData'
 
 // import { Store_Data } from './awes/store/store.data'
 // import StoreTable from './awes/store/store-table.component'
-
+//###########################################################################################
     
 const App = () => {
-
+//###########################################################################################
     // const columns = React.useMemo(
     //   () => Store_Data,
     //   []
@@ -54,13 +57,19 @@ const App = () => {
         //     }
         //   }, 1000)
         // }, [])
+//###########################################################################################
 
-        useEffect ( ()=>{
-            console.log(process.env.NODE_ENV)
-        console.log(process.env.REACT_APP_ROOD)
-        })
+    const columns = React.useMemo(
+        () => Job_Data,
+        []
+    )
+
+    const data = React.useMemo(() => makeData(10, 3), [])
+
+
         
     return (
+        //###########################################################################################
         // <SimpleTable columns={columns} data={data}/>
 
         // <StoreTable 
@@ -71,9 +80,10 @@ const App = () => {
         //   pageCount={pageCount}
         // />
         // console.log(process.env.REACT_APP_ROOD)
+        //###########################################################################################
     <div>
         good morning
-       
+        <JobTable columns={columns} data={data} />
     </div>
     )
 }
