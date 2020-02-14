@@ -15,7 +15,7 @@ const newJob = () => {
    lastName: faker.name.lastName(),
     age: faker.random.number(),
     visits: faker.random.number(),
-    status: faker.random.status(),
+    status: faker.random.word(),
     progress: faker.random.number()
   }
 }
@@ -34,3 +34,5 @@ export default function makeData(...lens) {
 
   return makeDataLevel()
 }
+
+

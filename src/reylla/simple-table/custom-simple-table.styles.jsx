@@ -5,16 +5,11 @@ export const Styles = styled.div`
   padding: 1rem;
 
   table {
+    width: 100%;
     border-spacing: 0;
     border: 1px solid black;
 
     tr {
-      ${'' /* :first-child {
-        td {
-          border-top: 1px solid black;
-        }
-      } */}
-
       :last-child {
         td {
           border-bottom: 0;
@@ -32,15 +27,6 @@ export const Styles = styled.div`
       :last-child {
         border-right: 0;
       }
-    }
-
-    tfoot {
-      tr:first-child {
-        td {
-          border-top: 2px solid black;
-        }
-      }
-      font-weight: bolder;
     }
   }
 `

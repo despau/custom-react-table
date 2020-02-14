@@ -1,28 +1,27 @@
 import React from 'react'
-// import makeData from './awes/job/makeJob-Data.data'
-import makeData from './makeData'
-import faker from 'faker'
-import { Job_Data } from './awes/job/job.data'
-import JobTable from './awes/job/job-table.component'
+import './App.css'
+
+import CustomSimpleTable from './reylla/simple-table/custom-simple-table.component'
+import { CustomSimpleData } from './reylla/simple-table/custom-simple-table.data'
+import makeData from './makeJob-Data.data'
+
+
+
+
 
 
 const App = () => {
 
   const columns = React.useMemo(
-    () => Job_Data,
-    []
-  )
+  () => CustomSimpleData,
+  []
+)
+  const tableData = React.useMemo(() => makeData(10, 3), [])
 
-  const data = React.useMemo(() => makeData(15, 5), [])
-
-  console.log(faker.name.firstName())
-  console.log(faker.name.lastName())
-  // console.log(faker.name.findName())
-  // console.log(faker.name.findName())
-  // console.log(faker.name.findName())
-
-  return (
-   <JobTable columns={columns} data={data} />
+  return(
+    <div className="mainapp">
+      <CustomSimpleTable columns={columns} data={tableData} />
+    </div>
   )
 }
 
