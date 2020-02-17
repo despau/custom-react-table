@@ -91,7 +91,7 @@ const CustomSimpleTable = ({ columns, data }) => {
             ))}
           </thead>
           <tbody {...getTableBodyProps()}>
-            {rows.slice(0, 10).map((row, i) => {
+            {rows.slice(0, 15).map((row, i) => {
               prepareRow(row)
               return (
                 <tr {...row.getRowProps()}>
@@ -103,7 +103,7 @@ const CustomSimpleTable = ({ columns, data }) => {
             })}
           </tbody>
         </table>
-        <p>Selected Rows: {Object.keys(selectedRowIds).length}</p>
+        {/* <p>Selected Rows: {Object.keys(selectedRowIds).length}</p>
         <pre>
           <code>
             {JSON.stringify(
@@ -117,7 +117,7 @@ const CustomSimpleTable = ({ columns, data }) => {
               2
             )}
           </code>
-        </pre>
+        </pre> */}
       </Styles>
     )
   }
