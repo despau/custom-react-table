@@ -16,7 +16,7 @@ const App = () => {
   () => CustomSimpleData,
   []
 )
-  const tableData = React.useMemo(() => makeData(10, 1), [])
+  const tableData = React.useMemo(() => makeData(100), [])
 
   return(
     <div className="mainapp">
